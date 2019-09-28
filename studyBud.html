@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="author" content="studyBud" />
+    <meta name="description" content="A web extension to help with studying and research!" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>studyBud</title>
+    <a href="javascript:main()"></a>
+
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+
+    <script type="text/javascript" src="popup.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/css/uikit.min.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit-icons.min.js"></script>
+
+</head>
+
+<body style="width:390px; height:580px">
+
+    <div>
+        <ul class="uk-child-width-expand" uk-tab uk-switcher>
+            <li><a id="CitationsButton" href="#">Citations</a></li>
+            <li><a id="ResearchButton" href="#">Research</a></li>
+            <li><a id="NotesButton" href="#">Notes</a></li>
+        </ul>
+        <ul class="uk-switcher uk-margin">
+            <!--Citation Tab-->
+            <li id="centre">
+                <img data-src="StudyBudFull.png" class="uk-padding-remove uk-margin-remove" width="500" height="500"
+                    alt="500" uk-img>
+                <p>Select some text to make a citation; and choose a style below.</p>
+                <button id="MLAButton" class="uk-button uk-button-default uk-button-small">MLA</button>
+                <button id="APAButton" class="uk-button uk-button-default uk-button-small">APA</button>
+                <!--<li class="uk-nav-divider"></li>-->
+                <form id="input">
+                    <div>
+                        <label for="author">Author:</label>
+                        <input type="text" id="authorInput">
+                    </div>
+                    <div>
+                        <label for="Other authors">Other authors:</label>
+                        <input type="text" id="otherAuthorsInput">
+                    </div>
+                    <div>
+                        <label for="title">Title:</label>
+                        <input type="text" id="titleInput">
+                    </div>
+                    <div>
+                        <label for="date">Date:</label>
+                        <input type="text" id="dateInput">
+                    </div>
+                    <div>
+                        <label for="webTitle">Website Title:</label>
+                        <input type="text" id="webTitleInput">
+                    </div>
+                    <div>
+                        <label for="org./Publisher">Org./Publisher:</label>
+                        <input type="text" id="organizationInput">
+                    </div>
+                    <div>
+                        <label for="URL">URL:</label>
+                        <input type="text" id="URLInput">
+                    </div>
+                    <div>
+                        <label for="Version">Version:</label>
+                        <input type="text" id="versionInput">
+                    </div>
+                    <div>
+                        <label for="Number">Number:</label>
+                        <input type="text" id="numberInput">
+                    </div>
+                    <div>
+                        <label for="Pub. Date">Pub. Date:</label>
+                        <input type="text" id="pubDateInput">
+                    </div>
+                    <div>
+                        <label for="Location">Location:</label>
+                        <input type="text" id="locationInput">
+                    </div>
+                    <div>
+                        <button id="submitButton" class="uk-button uk-button-default uk-button-small">Submit</button>
+                        <p id="test">Your citation with the quote will be copied to your clipboard! Check 'Research' for your
+                            saved citations.</p>
+                    </div>
+            </li>
+            <!--Research Tab-->
+            <li>
+                <p>Recommended resources:</p>
+                <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow>
+
+                    <ul class="uk-slideshow-items">
+                        <li>
+                            <div class="uk-card uk-card-default uk-card-body uk-card-size">
+                                <h4 id="firstCardTitle" class="uk-card-title">Article Title</h4>
+                                <p id="firstCardInfo">Hightlight text and right-click to search for similar resources.</p>
+                                <span class="uk-badge">tags</span>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous
+                        uk-slideshow-item="previous"></a>
+                    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next
+                        uk-slideshow-item="next"></a>
+
+                </div>
+                <p>Saved citations:</p>
+                <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow>
+
+                    <ul class="uk-slideshow-items">
+                        <li id="citation-list">
+                            <div class="uk-card uk-card-default uk-card-body uk-card-size">
+                                <h4 class="uk-card-title">Citation Text</h4>
+                                <p>Your saved citations will show up here!</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous
+                        uk-slideshow-item="previous"></a>
+                    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next
+                        uk-slideshow-item="next"></a>
+
+                </div>
+            </li>
+            <!--Notes Tab-->
+            <li>
+                <nav class="uk-navbar-container uk-margin" uk-navbar>
+                    <div class="uk-navbar-left">
+                        <!--Notes dropdown menu button-->
+                        <div class="uk-inline">
+                            <ul class="uk-navbar-nav">
+                                <li>
+                                    <a id="notesTitle" href="#">
+                                        <span class="uk-icon uk-margin-small-right" uk-icon="icon: file-text">
+                                        </span>
+                                        Notes
+                                    </a>
+                                </li>
+                            </ul>
+                            <div uk-dropdown>
+                                <ul class="uk-nav uk-dropdown-nav">
+                                    <li id="ACTIVE" class="uk-active"><a href="#centre">ACTIVE</a></li>
+                                    <li><a id="THENOTE" href="#">New Note</a></li>
+                                    <li class="uk-nav-divider"></li>
+                                    <li id="SAVEDNOTES" class="uk-nav-header">Saved Notes</li>
+
+                                    <ul id="parent" class="uk-child-width-expand" uk-switcher></ul>
+                                    <ul id="parent2" class="uk-switcher uk-margin"></ul>
+                                    <!--other saved notes go over here-->
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="uk-navbar-item">
+                            <form action="javascript:void(0)">
+                                <textarea id="NOTETITLE" cols="30" class="uk-input uk-form-width-regular" type="text" placeholder="Title"></textarea>
+                            </form>
+                        </div>
+                    </div>
+                </nav>
+                <!--Textbox for notetaking-->
+                <div>
+                    <textarea id="text_field" rows="20" cols="50" placeholder="Write notes down here..."></textarea>
+                </div>
+                <div>
+                    <button id="saveButton" class="uk-button uk-button-primary uk-button-small">Save</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

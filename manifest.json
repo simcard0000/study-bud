@@ -1,0 +1,22 @@
+{
+    "name": "studyBud",
+    "version": "1.0",
+    "description": "HTN 2019 Submission! A web extension to help with research and studying.",
+    "permissions": ["storage", "contextMenus", "clipboardRead", "clipboardWrite", "activeTab"],
+    "background":{
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "icons": {
+        "16": "16.png",           
+        "32": "32.png",           
+        "48": "48.png",
+        "128": "128.png"            
+    },
+    "browser_action": {
+        "default_title": "studyBud",     
+        "default_popup": "studyBud.html"       
+    },
+    "content_security_policy": "script-src 'self' https://cdnjs.cloudflare.com; object-src 'self'",
+    "manifest_version": 2
+}

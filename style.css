@@ -1,0 +1,95 @@
+#info{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+    text-align: center;
+    padding-right: 20%;
+}
+
+#ACTIVE, #THENOTE, #SAVEDNOTES, #notesTitle{
+    font-family: 'Quicksand', sans-serif;
+}
+
+form{
+    padding: 1em;
+    border-radius: 1em;
+}
+
+label{
+    text-align: right;
+    display: inline-block;
+    width: 100px;
+}
+
+form div + div{
+    margin-top: 1em;
+}
+
+p{
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+}
+
+#MLAButton, #APAButton, #submitButton{
+    background-color: #6dcff6;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    border-color: lightgray;
+}
+
+#saveButton{
+    background-color: #6dcff6;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+br{
+    height:20px;
+    font-size:14pt;
+    width: fit-content;
+    font-family: 'Quicksand', sans-serif ;
+    font-size: 0.05;
+}
+input{
+    width: fit-content;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 0.05;
+}
+
+#centre{
+    text-align: center;
+}
+
+#invisible_border{
+    border: 0;
+}
+
+#container{
+    border: 0;
+    resize: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#button_color{
+    text-align: center;
+    border-color: lightblue;
+}
+
+#text_field{
+    border: 0;
+    resize: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#NOTETITLE{
+    border: 0;
+    resize: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Quicksand', sans-serif;
+}
