@@ -1,6 +1,6 @@
-This is a re-upload of the original repository.
+This is a re-upload of the original repository. This project has been revived as [Codex](https://github.com/simcard0000/codex-browser-extension).
 
-![active development](https://img.shields.io/badge/active%20dev-on%20hold-yellow.svg)
+![active development](https://img.shields.io/badge/active%20dev-no-red.svg)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/simcard0000/study-bud.svg)
 
 # study-bud
